@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+
 public class IfElseStatementTheme {
     public static void main(String[] args) {
         // Задание 1: ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA
@@ -27,7 +29,6 @@ public class IfElseStatementTheme {
 
         System.out.println();
 
-
         // Задание 2: ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ
         System.out.println("2. ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ");
 
@@ -50,7 +51,6 @@ public class IfElseStatementTheme {
 
         System.out.println();
 
-
         // Задание 3: ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ
         System.out.println("3. ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ");
 
@@ -67,7 +67,6 @@ public class IfElseStatementTheme {
         }
 
         System.out.println();
-
 
         // Задание 4: ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА
         System.out.println("4. ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА");
@@ -102,20 +101,19 @@ public class IfElseStatementTheme {
 
         System.out.println();
 
-
         // Задание 5: ИНВЕНТАРИЗАЦИЯ
         System.out.println("5. ИНВЕНТАРИЗАЦИЯ");
 
-        int serialFromDB = 567;
+        int serialFromDb = 567;
         int serialOnDevice = 567;
 
-        if (serialFromDB == serialOnDevice) {
-            System.out.println("[№" + serialFromDB + "]: компьютер на 3-м этаже в кабинете 2");
+        if (serialFromDb == serialOnDevice) {
+            System.out.println("[№" + serialFromDb + "]: компьютер на 3-м этаже в кабинете 2");
         } else {
             // Поразрядная проверка
-            int hundredsMatch = (serialFromDB / 100 == serialOnDevice / 100) ? 1 : 0;
-            int tensMatch = ((serialFromDB / 10) % 10 == (serialOnDevice / 10) % 10) ? 1 : 0;
-            int unitsMatch = (serialFromDB % 10 == serialOnDevice % 10) ? 1 : 0;
+            int hundredsMatch = (serialFromDb / 100 == serialOnDevice / 100) ? 1 : 0;
+            int tensMatch = ((serialFromDb / 10) % 10 == (serialOnDevice / 10) % 10) ? 1 : 0;
+            int unitsMatch = (serialFromDb % 10 == serialOnDevice % 10) ? 1 : 0;
 
             int matches = hundredsMatch + tensMatch + unitsMatch;
 
@@ -123,11 +121,11 @@ public class IfElseStatementTheme {
                 System.out.println("[№" + serialOnDevice + "]: оборудование не идентифицировано");
             } else {
                 String details = """
-                    [№%d]: частичное совпадение — %d цифры(ра) совпадает(ют)
-                    Совпадение сотен: %s
-                    Совпадение десятков: %s
-                    Совпадение единиц: %s
-                    """.formatted(
+                        [№%d]: частичное совпадение — %d цифры(ра) совпадает(ют)
+                        Совпадение сотен: %s
+                        Совпадение десятков: %s
+                        Совпадение единиц: %s
+                        """.formatted(
                         serialOnDevice,
                         matches,
                         hundredsMatch == 1 ? "да" : "нет",
@@ -139,7 +137,6 @@ public class IfElseStatementTheme {
         }
 
         System.out.println();
-
 
         // Задание 6: ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %
         System.out.println("6. ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
@@ -163,8 +160,8 @@ public class IfElseStatementTheme {
         System.out.println("Итого: " + total + " руб.");
 
         // Способ 2: BigDecimal
-        java.math.BigDecimal depositBd = new java.math.BigDecimal("321123.79");
-        java.math.BigDecimal rateBd;
+        BigDecimal depositBd = new BigDecimal("321123.79");
+        BigDecimal rateBd;
         if (depositBd.compareTo(new java.math.BigDecimal("100000")) < 0) {
             rateBd = new java.math.BigDecimal("0.05");
         } else if (depositBd.compareTo(new java.math.BigDecimal("300000")) <= 0) {
@@ -173,7 +170,8 @@ public class IfElseStatementTheme {
             rateBd = new java.math.BigDecimal("0.10");
         }
 
-        java.math.BigDecimal interestBd = depositBd.multiply(rateBd).setScale(2, java.math.RoundingMode.HALF_UP);
+        java.math.BigDecimal interestBd =
+                depositBd.multiply(rateBd).setScale(2, java.math.RoundingMode.HALF_UP);
         java.math.BigDecimal totalBd = depositBd.add(interestBd).setScale(2, java.math.RoundingMode.HALF_UP);
 
         System.out.println("Способ 2 (BigDecimal):");
@@ -182,7 +180,6 @@ public class IfElseStatementTheme {
         System.out.println("Итого: " + totalBd + " руб.");
 
         System.out.println();
-
 
         // Задание 7: ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ
         System.out.println("7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
@@ -223,13 +220,12 @@ public class IfElseStatementTheme {
 
         System.out.println();
 
-
         // Задание 8: РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ
         System.out.println("8. РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
 
-        java.math.BigDecimal monthlyRevenue = new java.math.BigDecimal("13025.233");
-        java.math.BigDecimal monthlyRent = new java.math.BigDecimal("5123.018");
-        java.math.BigDecimal monthlyCost = new java.math.BigDecimal("9001.729");
+        BigDecimal monthlyRevenue = new BigDecimal("13025.233");
+        BigDecimal monthlyRent = new BigDecimal("5123.018");
+        BigDecimal monthlyCost = new BigDecimal("9001.729");
 
         java.math.BigDecimal monthlyProfit = monthlyRevenue
                 .subtract(monthlyRent)

@@ -1,14 +1,12 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.nio.file.FileSystems;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
 public class VariablesTheme {
     public static void main(String[] args) {
-        long startNano = System.nanoTime();
-        LocalTime startTime = LocalTime.now();
-
         System.out.println("1. ВЫВОД ASCII-ГРАФИКИ");
         System.out.println();
 
@@ -136,47 +134,47 @@ public class VariablesTheme {
         System.out.println();
 
         short pressure = Short.MAX_VALUE;
-        System.out.println(String.format("""
+        System.out.printf("""
                 [Давление, Па]:
                   Исходное: %d
                   +1: %d
                   -1: %d""",
                 pressure,
                 (short) (pressure + 1),
-                (short) (pressure - 1)));
+                (short) (pressure - 1));
         System.out.println();
 
         char systemStatus = Character.MAX_VALUE;
-        System.out.println(String.format("""
+        System.out.printf("""
                 [Код состояния системы]:
                   Исходное: %d
                   +1: %d
                   -1: %d""",
                 (int) systemStatus,
                 (int) ((char) (systemStatus + 1)),
-                (int) ((char) (systemStatus - 1))));
+                (int) ((char) (systemStatus - 1)));
         System.out.println();
 
         int distance = Integer.MAX_VALUE;
-        System.out.println(String.format("""
+        System.out.printf("""
                 [Пройденное расстояние, м]:
                   Исходное: %d
                   +1: %d
                   -1: %d""",
                 distance,
                 distance + 1,
-                distance - 1));
+                distance - 1);
         System.out.println();
 
         long flightTime = Long.MAX_VALUE;
-        System.out.println(String.format("""
+        System.out.printf("""
                 [Время с момента старта, нс]:
                   Исходное: %d
                   +1: %d
                   -1: %d""",
                 flightTime,
                 flightTime + 1,
-                flightTime - 1));
+                flightTime - 1);
         System.out.println();
 
         System.out.println("7. ВЫВОД ПАРАМЕТРОВ JVM И ОС");
@@ -194,10 +192,10 @@ public class VariablesTheme {
         double maxMb = maxMemory / (1024.0 * 1024.0);
 
         String userHome = System.getProperty("user.home");
-        String systemDisk = userHome != null && userHome.length() > 0 ? userHome.substring(0, 1) : "?";
+        String systemDisk = userHome != null && !userHome.isEmpty() ? userHome.substring(0, 1) : "?";
         String osVersion = System.getProperty("os.version");
         String javaVersion = System.getProperty("java.version");
-        String pathSeparator = System.getProperty("file.separator");
+        String pathSeparator = FileSystems.getDefault().getSeparator();
 
         System.out.println("""
                 Характеристики JVM:""");
@@ -217,6 +215,9 @@ public class VariablesTheme {
 
         System.out.println("8. ЗАМЕР ВРЕМЕНИ РАБОТЫ КОДА");
         System.out.println();
+
+        long startNano = System.nanoTime();
+        LocalTime startTime = LocalTime.now();
 
         long endNano = System.nanoTime();
         LocalTime endTime = LocalTime.now();
