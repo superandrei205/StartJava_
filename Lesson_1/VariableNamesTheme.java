@@ -93,8 +93,8 @@ public class VariableNamesTheme {
         System.out.println("Имя работника месяца = " + employeeOfTheMonth);
 
         // название электронной книги
-        String eBookTitle = "Clean Code";
-        System.out.println("Название электронной книги = " + eBookTitle);
+        String ebookTitle = "Clean Code";
+        System.out.println("Название электронной книги = " + ebookTitle);
 
         // размер
         int size = 1024;
