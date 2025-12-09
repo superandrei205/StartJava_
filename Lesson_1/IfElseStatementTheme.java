@@ -2,8 +2,7 @@ import java.math.BigDecimal;
 
 public class IfElseStatementTheme {
     public static void main(String[] args) {
-        // Задание 1: ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA
-        System.out.println("1. ПЕРЕВОД ПСЕВДОКОДА НА ЯЗЫК JAVA");
+        System.out.println("1. ПЕРЕВОД ПСЕВДОКОДА НА sЯЗЫК JAVA");
 
         boolean maleGender = false;
         int age = 25;
@@ -27,10 +26,7 @@ public class IfElseStatementTheme {
             System.out.println("Рост: " + height + " м. Не ниже 1.8 м.");
         }
 
-        System.out.println();
-
-        // Задание 2: ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ
-        System.out.println("2. ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ");
+        System.out.println("\n2. ПОИСК БОЛЬШЕГО ЧИСЛА ШАГОВ");
 
         int stepsYesterday = 8500;
         int stepsToday = 10200;
@@ -49,10 +45,7 @@ public class IfElseStatementTheme {
         double averageSteps = (stepsYesterday + stepsToday) / 2.0;
         System.out.println("Среднее: " + averageSteps + " шагов.");
 
-        System.out.println();
-
-        // Задание 3: ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ
-        System.out.println("3. ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ");
+        System.out.println("\n3. ПРОВЕРКА КОЛИЧЕСТВА ГОСТЕЙ");
 
         int guests = 11;
 
@@ -66,10 +59,7 @@ public class IfElseStatementTheme {
             System.out.println("Записалось " + guests + " гостей. Нужны индивидуальные задания.");
         }
 
-        System.out.println();
-
-        // Задание 4: ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА
-        System.out.println("4. ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА");
+        System.out.println("\n4. ОПРЕДЕЛЕНИЕ ПЕРВОГО СИМВОЛА НИКНЕЙМА");
 
         String nickname = "Andrei";
 
@@ -87,7 +77,6 @@ public class IfElseStatementTheme {
             System.out.println("Имя " + nickname + " начинается с символа '" + firstChar + "'");
         }
 
-        // Способ 2: с помощью Character.is...
         System.out.println("Способ 2 (через Character.is...):");
         if (Character.isLowerCase(firstChar)) {
             System.out.println("Имя " + nickname + " начинается с маленькой буквы '" + firstChar + "'");
@@ -96,13 +85,10 @@ public class IfElseStatementTheme {
         } else if (Character.isDigit(firstChar)) {
             System.out.println("Имя " + nickname + " начинается с цифры '" + firstChar + "'");
         } else {
-            System.out.println("Имя " + nickname + " начинается с символа '" + firstChar + "'");
+            System.out.println("Имя " + nickname + " начинается с символа '" + firstChar + "'\n");
         }
 
-        System.out.println();
-
-        // Задание 5: ИНВЕНТАРИЗАЦИЯ
-        System.out.println("5. ИНВЕНТАРИЗАЦИЯ");
+        System.out.println("\n5. ИНВЕНТАРИЗАЦИЯ");
 
         int serialFromDb = 567;
         int serialOnDevice = 567;
@@ -110,7 +96,6 @@ public class IfElseStatementTheme {
         if (serialFromDb == serialOnDevice) {
             System.out.println("[№" + serialFromDb + "]: компьютер на 3-м этаже в кабинете 2");
         } else {
-            // Поразрядная проверка
             int hundredsMatch = (serialFromDb / 100 == serialOnDevice / 100) ? 1 : 0;
             int tensMatch = ((serialFromDb / 10) % 10 == (serialOnDevice / 10) % 10) ? 1 : 0;
             int unitsMatch = (serialFromDb % 10 == serialOnDevice % 10) ? 1 : 0;
@@ -136,10 +121,7 @@ public class IfElseStatementTheme {
             }
         }
 
-        System.out.println();
-
-        // Задание 6: ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %
-        System.out.println("6. ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
+        System.out.println("\n6. ПОДСЧЕТ НАЧИСЛЕННЫХ БАНКОМ %");
 
         // Способ 1: float
         float deposit = 321123.79f;
@@ -179,10 +161,7 @@ public class IfElseStatementTheme {
         System.out.println("Начисленные %: " + interestBd + " руб.");
         System.out.println("Итого: " + totalBd + " руб.");
 
-        System.out.println();
-
-        // Задание 7: ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ
-        System.out.println("7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
+        System.out.println("\n7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
 
         double historyPercent = 59.0;
         double programmingPercent = 92.0;
@@ -218,10 +197,7 @@ public class IfElseStatementTheme {
         System.out.println("Средний балл: " + averageGrade);
         System.out.println("Средний %: " + averagePercent + "%");
 
-        System.out.println();
-
-        // Задание 8: РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ
-        System.out.println("8. РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
+        System.out.println("\n8. РАСЧЕТ ГОДОВОЙ ПРИБЫЛИ");
 
         BigDecimal monthlyRevenue = new BigDecimal("13025.233");
         BigDecimal monthlyRent = new BigDecimal("5123.018");

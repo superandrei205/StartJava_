@@ -1,8 +1,6 @@
 public class VariableNamesTheme {
     public static void main(String[] args) {
-        // БЛОК 1: РАЗНЫЕ ПЕРЕМЕННЫЕ
         System.out.println("1. РАЗНЫЕ ПЕРЕМЕННЫЕ");
-        System.out.println();
 
         // цифра
         int digit = 7;
@@ -89,8 +87,8 @@ public class VariableNamesTheme {
         System.out.println("Окончание диапазона = " + rangeEnd);
 
         // имя работника месяца
-        String employeeOfTheMonth = "Иван";
-        System.out.println("Имя работника месяца = " + employeeOfTheMonth);
+        String employeeOfMonth = "Иван";
+        System.out.println("Имя работника месяца = " + employeeOfMonth);
 
         // название электронной книги
         String ebookTitle = "Clean Code";
@@ -114,17 +112,13 @@ public class VariableNamesTheme {
 
         // количество чисел в строке
         int numbersInLine = 5;
-        System.out.println("Количество чисел в строке = " + numbersInLine);
+        System.out.println("Количество чисел в строке = " + numbersInLine + '\n');
 
-        System.out.println();
-
-        // БЛОК 2: BOOLEAN-ПЕРЕМЕННЫЕ
-        System.out.println("2. BOOLEAN-ПЕРЕМЕННЫЕ");
-        System.out.println();
+        System.out.println("2. BOOLEAN-ПЕРЕМЕННЫЕ\n");
 
         // сотни равны?
-        boolean areHundredsEqual = true;
-        System.out.println("Сотни равны? = " + areHundredsEqual);
+        boolean isEqualHundreds = true;
+        System.out.println("Сотни равны? = " + isEqualHundreds);
 
         // компьютер включен?
         boolean isComputerOn = false;
@@ -143,26 +137,22 @@ public class VariableNamesTheme {
         System.out.println("Файл пустой? = " + isFileEmpty);
 
         // соединение активное?
-        boolean isConnectionActive = true;
-        System.out.println("Соединение активное? = " + isConnectionActive);
+        boolean isActiveConnection = true;
+        System.out.println("Соединение активное? = " + isActiveConnection);
 
         // новый?
         boolean isNew = false;
         System.out.println("Новый? = " + isNew);
 
         // электронная почта действительная?
-        boolean isEmailValid = true;
-        System.out.println("Электронная почта действительная? = " + isEmailValid);
+        boolean isValidEmail = true;
+        System.out.println("Электронная почта действительная? = " + isValidEmail);
 
         // имеются уникальные строки?
         boolean hasUniqueLines = false;
-        System.out.println("Имеются уникальные строки? = " + hasUniqueLines);
+        System.out.println("Имеются уникальные строки? = " + hasUniqueLines + '\n');
 
-        System.out.println();
-
-        // БЛОК 3: АББРЕВИАТУРЫ
-        System.out.println("3. АББРЕВИАТУРЫ");
-        System.out.println();
+        System.out.println("3. АББРЕВИАТУРЫ\n");
 
         // старый universally unique identifier
         String oldUuid = "550e8400-e29b-41d4-a716-446655440000";
@@ -185,8 +175,8 @@ public class VariableNamesTheme {
         System.out.println("Сокращенный URL = " + shortUrl);
 
         // новый идентификатор клиента
-        String newClientId = "CL-7890";
-        System.out.println("Новый client ID = " + newClientId);
+        String newCid = "CL-7890";
+        System.out.println("Новый client ID = " + newCid);
 
         // количество символов в american standard code for information interchange
         int asciiCharCount = 128;

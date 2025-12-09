@@ -7,8 +7,7 @@ import java.util.Locale;
 
 public class VariablesTheme {
     public static void main(String[] args) {
-        System.out.println("1. ВЫВОД ASCII-ГРАФИКИ");
-        System.out.println();
+        System.out.println("1. ВЫВОД ASCII-ГРАФИКИ\n");
 
         System.out.println(String.join("\n",
                 "            /\\",
@@ -20,15 +19,13 @@ public class VariablesTheme {
         System.out.println();
 
         System.out.println("""
-                 /\\
-           J    /  \\  v     v  a
-           J   /_( )\\  v   v  a a
-        J  J  /      \\  V V  aaaaa
-         JJ  /___/\\___\\  V  a     a""");
-        System.out.println();
+                         /\\
+                   J    /  \\  v     v  a
+                   J   /_( )\\  v   v  a a
+                J  J  /      \\  V V  aaaaa
+                 JJ  /___/\\___\\  V  a     a""");
 
-        System.out.println("2. РАСЧЕТ СТОИМОСТИ ТОВАРА");
-        System.out.println();
+        System.out.println("\n2. РАСЧЕТ СТОИМОСТИ ТОВАРА\n");
 
         float penCost = 105.5f;
         float bookCost = 235.23f;
@@ -38,8 +35,7 @@ public class VariablesTheme {
 
         System.out.println("Стоимость без скидки: " + totalBeforeDiscount + " руб.");
         System.out.println("Сумма скидки: " + discount + " руб.");
-        System.out.println("Стоимость со скидкой: " + totalAfterDiscount + " руб.");
-        System.out.println();
+        System.out.println("Стоимость со скидкой: " + totalAfterDiscount + " руб.\n");
 
         BigDecimal penCostBd = BigDecimal.valueOf(10550, 2);
         BigDecimal bookCostBd = BigDecimal.valueOf(23523, 2);
@@ -52,39 +48,32 @@ public class VariablesTheme {
         System.out.println("Стоимость без скидки (Bd): " + totalBeforeDiscountBd + " руб.");
         System.out.println("Сумма скидки (Bd): " + discountBd + " руб.");
         System.out.println("Стоимость со скидкой (Bd): " + totalAfterDiscountBd + " руб.");
-        System.out.println();
 
-        System.out.println("3. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ЯЧЕЕК В ТАБЛИЦЕ");
-        System.out.println();
+        System.out.println("\n3. ПЕРЕСТАНОВКА ЗНАЧЕНИЙ ЯЧЕЕК В ТАБЛИЦЕ\n");
 
         int a1 = 2;
         int b1 = 5;
         System.out.println("Исходные значения: A1 = " + a1 + ", B1 = " + b1);
-        System.out.println();
 
-        System.out.println("Метод: с третьей переменной");
+        System.out.println("\nМетод: с третьей переменной");
         int temp = a1;
         a1 = b1;
         b1 = temp;
         System.out.println("Результат: A1 = " + a1 + ", B1 = " + b1);
-        System.out.println();
 
-        System.out.println("Метод: арифметические операции");
+        System.out.println("\nМетод: арифметические операции");
         a1 += b1;
         b1 = a1 - b1;
         a1 = a1 - b1;
         System.out.println("Результат: A1 = " + a1 + ", B1 = " + b1);
-        System.out.println();
 
-        System.out.println("Метод: побитовый XOR");
+        System.out.println("\nМетод: побитовый XOR");
         a1 ^= b1;
         b1 ^= a1;
         a1 ^= b1;
         System.out.println("Результат: A1 = " + a1 + ", B1 = " + b1);
-        System.out.println();
 
-        System.out.println("4. ДЕКОДИРОВАНИЕ СООБЩЕНИЯ");
-        System.out.println();
+        System.out.println("\n4. ДЕКОДИРОВАНИЕ СООБЩЕНИЯ\n");
 
         int c1 = 1055;
         int c2 = 1088;
@@ -96,10 +85,8 @@ public class VariablesTheme {
         System.out.printf("%6d%6d%6d%6d%6d%6d%n", c1, c2, c3, c4, c5, c6);
         System.out.printf("%6c%6c%6c%6c%6c%6c%n", (char) c1, (char) c2, (char) c3,
                 (char) c4, (char) c5, (char) c6);
-        System.out.println();
 
-        System.out.println("5. АНАЛИЗ КОДА ТОВАРА");
-        System.out.println();
+        System.out.println("\n5. АНАЛИЗ КОДА ТОВАРА\n");
 
         int code = 123;
         int category = code / 100;
@@ -108,8 +95,7 @@ public class VariablesTheme {
         int checksum = category + subcategory + packageType;
         int verifyCode = category * subcategory * packageType;
 
-        System.out.printf(
-                """
+        System.out.printf("""
                 Код товара: %d
                   категория товара - %d
                   подкатегория - %d
@@ -117,10 +103,8 @@ public class VariablesTheme {
                 Контрольная сумма = %d
                 Проверочный код = %d""",
                 code, category, subcategory, packageType, checksum, verifyCode);
-        System.out.println();
 
-        System.out.println("6. ТЕСТИРОВАНИЕ ДАТЧИКОВ ПЕРЕД ЗАПУСКОМ РАКЕТЫ");
-        System.out.println();
+        System.out.println("\n6. ТЕСТИРОВАНИЕ ДАТЧИКОВ ПЕРЕД ЗАПУСКОМ РАКЕТЫ\n");
 
         byte temperature = Byte.MAX_VALUE;
         System.out.printf("""
@@ -175,10 +159,8 @@ public class VariablesTheme {
                 flightTime,
                 flightTime + 1,
                 flightTime - 1);
-        System.out.println();
 
-        System.out.println("7. ВЫВОД ПАРАМЕТРОВ JVM И ОС");
-        System.out.println();
+        System.out.println("\n7. ВЫВОД ПАРАМЕТРОВ JVM И ОС\n");
 
         Runtime runtime = Runtime.getRuntime();
         long totalMemory = runtime.totalMemory();
@@ -211,10 +193,8 @@ public class VariablesTheme {
         System.out.println("  Версия ОС: " + osVersion);
         System.out.println("  Версия Java: " + javaVersion);
         System.out.println("  Сепаратор пути: " + pathSeparator);
-        System.out.println();
 
-        System.out.println("8. ЗАМЕР ВРЕМЕНИ РАБОТЫ КОДА");
-        System.out.println();
+        System.out.println("\n8. ЗАМЕР ВРЕМЕНИ РАБОТЫ КОДА\n");
 
         long startNano = System.nanoTime();
         LocalTime startTime = LocalTime.now();
@@ -229,11 +209,11 @@ public class VariablesTheme {
         String endStr = endTime.format(dtf);
 
         System.out.printf("""
-                        | Старт проверки | %s |
-                        +----------------+--------------+
-                        | Финиш проверки | %s |
-                        +----------------+--------------+
-                        | Время работы   | %s сек    |%n""",
+                | Старт проверки | %s |
+                +----------------+--------------+
+                | Финиш проверки | %s |
+                +----------------+--------------+
+                | Время работы   | %s сек    |%n""",
                 startStr, endStr, durationStr);
     }
 }
