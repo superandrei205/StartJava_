@@ -129,12 +129,12 @@ public class VariableNamesTheme {
         System.out.println("Есть равные цифры? = " + hasEqualDigits);
 
         // служба создана?
-        boolean isServiceCreated = true;
-        System.out.println("Служба создана? = " + isServiceCreated);
+        boolean isCreatedService = true;
+        System.out.println("Служба создана? = " + isCreatedService);
 
         // файл пустой?
-        boolean isFileEmpty = false;
-        System.out.println("Файл пустой? = " + isFileEmpty);
+        boolean isEmptyFile = false;
+        System.out.println("Файл пустой? = " + isEmptyFile);
 
         // соединение активное?
         boolean isActiveConnection = true;
