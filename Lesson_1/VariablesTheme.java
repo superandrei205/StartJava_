@@ -85,8 +85,7 @@ public class VariablesTheme {
         int c6 = 1090;
 
         System.out.printf("%6d%6d%6d%6d%6d%6d%n", c1, c2, c3, c4, c5, c6);
-        System.out.printf("%6c%6c%6c%6c%6c%6c%n", c1, c2, c3,
-                 c4, c5, c6);
+        System.out.printf("%6c%6c%6c%6c%6c%6c%n", c1, c2, c3, c4, c5, c6);
 
         System.out.println("\n5. АНАЛИЗ КОДА ТОВАРА\n");
 
@@ -169,7 +168,7 @@ public class VariablesTheme {
         float toMb = 1024 * 1024;
         float totalMemory = rt.totalMemory() / toMb;
         float freeMemory = rt.freeMemory() / toMb;
-        float usedMemory = totalMemory - freeMemory / toMb;
+        float usedMemory = (totalMemory - freeMemory) / toMb;
         float maxMemory = rt.maxMemory() / toMb;
 
         char systemDisk = System.getProperty("user.home").charAt(0);
@@ -178,18 +177,18 @@ public class VariablesTheme {
         String pathSeparator = FileSystems.getDefault().getSeparator();
 
         System.out.printf("""
-                    Характеристики JVM:
-                      Доступных ядер: %d
-                      Выделенная память: %.1f МБ
-                      Свободная память: %.1f МБ
-                      Используемая память: %.1f МБ
-                      Макс. доступная память: %.1f МБ
-                    
-                    Параметры ОС:
-                      Системный диск: %s
-                      Версия ОС: %s
-                      Версия Java: %s
-                      Сепаратор пути: %s
+                Характеристики JVM:
+                  Доступных ядер: %d
+                  Выделенная память: %.1f МБ
+                  Свободная память: %.1f МБ
+                  Используемая память: %.1f МБ
+                  Макс. доступная память: %.1f МБ
+                
+                Параметры ОС:
+                  Системный диск: %s
+                  Версия ОС: %s
+                  Версия Java: %s
+                  Сепаратор пути: %s
                     """,
                 rt.availableProcessors(),
                 totalMemory,
@@ -216,7 +215,7 @@ public class VariablesTheme {
                 +----------------+--------------+
                 | Финиш проверки | %s |
                 +----------------+--------------+
-                | Время работы   | %s сек    |%n""",
+                | Время работы   | %.3f сек    |%n""",
                 startStr, endStr, durationSec);
     }
 }
