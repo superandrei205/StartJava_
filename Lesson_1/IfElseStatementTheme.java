@@ -72,26 +72,27 @@ public class IfElseStatementTheme {
 
         // Способ 1: с помощью диапазонов символов
         System.out.println("Способ 1 (через диапазоны):");
-        String startMessage = "Имя " + nickname + " начинается с";
+        System.out.print("Имя " + nickname + " начинается с");
         if (firstChar >= 'a' && firstChar <= 'z') {
-            System.out.println(startMessage + "маленькой буквы '" + firstChar + "'");
+            System.out.println("маленькой буквы '" + firstChar + "'");
         } else if (firstChar >= 'A' && firstChar <= 'Z') {
-            System.out.println(startMessage + "большой буквы '" + firstChar + "'");
+            System.out.println("большой буквы '" + firstChar + "'");
         } else if (firstChar >= '0' && firstChar <= '9') {
-            System.out.println(startMessage + "цифры '" + firstChar + "'");
+            System.out.println("цифры '" + firstChar + "'");
         } else {
-            System.out.println(startMessage + "с символа '" + firstChar + "'");
+            System.out.println("с символа '" + firstChar + "'");
         }
 
         System.out.println("Способ 2 (через Character.is...):");
+        System.out.print("Имя " + nickname + " начинается с");
         if (Character.isLowerCase(firstChar)) {
-            System.out.println(startMessage + "маленькой буквы '" + firstChar + "'");
+            System.out.println("маленькой буквы '" + firstChar + "'");
         } else if (Character.isUpperCase(firstChar)) {
-            System.out.println(startMessage + "большой буквы '" + firstChar + "'");
+            System.out.println("большой буквы '" + firstChar + "'");
         } else if (Character.isDigit(firstChar)) {
-            System.out.println(startMessage + "цифры '" + firstChar + "'");
+            System.out.println("цифры '" + firstChar + "'");
         } else {
-            System.out.println(startMessage + "символа '" + firstChar + "'\n");
+            System.out.println("символа '" + firstChar + "'\n");
         }
 
         System.out.println("\n5. ИНВЕНТАРИЗАЦИЯ");
@@ -102,20 +103,20 @@ public class IfElseStatementTheme {
         if (snFromDb == snOnDevice) {
             System.out.println("[№" + snFromDb + "]: компьютер на 3-м этаже в кабинете 2");
         } else {
-            boolean isEqualHundreds = (snFromDb / 100 ) == (snOnDevice / 100);
+            boolean isEqualOnes = (snFromDb % 10) == (snOnDevice % 10);
             boolean isEqualTens = (snFromDb / 10 % 10) == (snOnDevice / 10 % 10);
-            boolean isEqualLastDigits = (snFromDb % 10) == (snOnDevice % 10);
+            boolean isEqualHundreds = (snFromDb / 100 ) == (snOnDevice / 100);
 
-            if (!isEqualHundreds && !isEqualTens && !isEqualLastDigits) {
+            if (!isEqualHundreds && !isEqualTens && !isEqualOnes) {
                 System.out.println("[№" + snOnDevice + "]: оборудование не идентифицировано");
             } else {
                 System.out.printf("""
                         Нет полного совпадения:
                         База данных: [№%d]
                         Фактический: [№%s%s%s]""", snFromDb,
-                        isEqualHundreds ? snFromDb % 10 : "_",
-                        isEqualTens ? snFromDb / 10 % 10 : "_",
-                        isEqualLastDigits ? snFromDb / 100 : "_");
+                        isEqualHundreds ? snOnDevice / 100 : "_",
+                        isEqualTens ? snOnDevice / 10 % 10 : "_",
+                        isEqualOnes ? snOnDevice % 10 : "_");
             }
         }
 
@@ -136,18 +137,16 @@ public class IfElseStatementTheme {
                     Способ 1 (float):
                     Сумма вклада: %.2f руб.
                     Начисленные %%: %.2f руб.
-                    Итого:        %.2f руб.
+                    Итого: %.2f руб.
                     """, deposit, interest, total);
 
         // Способ 2: BigDecimal
         BigDecimal depositBd = new BigDecimal("321123.79");
-        BigDecimal rateBd;
+        BigDecimal rateBd = new BigDecimal("0.10");
         if (depositBd.compareTo(new BigDecimal("100000")) < 0) {
             rateBd = new BigDecimal("0.05");
         } else if (depositBd.compareTo(new BigDecimal("300000")) <= 0) {
             rateBd = new BigDecimal("0.07");
-        } else {
-            rateBd = new BigDecimal("0.10");
         }
 
         BigDecimal interestBd =
@@ -156,12 +155,10 @@ public class IfElseStatementTheme {
 
         System.out.printf("""
                 Способ 2 (BigDecimal):
-                Сумма вклада:                %s руб.
-                Начисленные %%:              %s руб.
-                Итого:                       %s руб.
-                """,
-                depositBd, interestBd, totalBd
-        );
+                Сумма вклада: %s руб.
+                Начисленные %%: %s руб.
+                Итого: %s руб.
+                """, depositBd, interestBd, totalBd);
 
         System.out.println("\n7. ОПРЕДЕЛЕНИЕ ОЦЕНКИ ПО ПРЕДМЕТАМ");
 

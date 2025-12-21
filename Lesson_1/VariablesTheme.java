@@ -168,7 +168,7 @@ public class VariablesTheme {
         float toMb = 1024 * 1024;
         float totalMemory = rt.totalMemory() / toMb;
         float freeMemory = rt.freeMemory() / toMb;
-        float usedMemory = (totalMemory - freeMemory) / toMb;
+        float usedMemory = totalMemory - freeMemory;
         float maxMemory = rt.maxMemory() / toMb;
 
         char systemDisk = System.getProperty("user.home").charAt(0);
