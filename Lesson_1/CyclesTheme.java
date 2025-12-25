@@ -3,10 +3,10 @@ import java.util.Random;
 public class CyclesTheme {
     public static void main(String[] args) {
         System.out.println("1: ВЫВОД ASCII-СИМВОЛОВ");
-        System.out.printf("%-9s %-11s %s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
+        System.out.printf("%s %11s %13s%n", "DECIMAL", "CHARACTER", "DESCRIPTION");
         for (int i = 33; i <= 122; i++) {
             if (((i <= '0') && (i % 2 != 0)) || ((i >= 'a') && (i % 2 == 0))) {
-                System.out.printf("%-9d %-11c %s%n", i, i, Character.getName(i));
+                System.out.printf("%4d%11c%12s%s%n", i, i, "", Character.getName(i));
             }
         }
 
@@ -31,8 +31,7 @@ public class CyclesTheme {
         for (int col = 2; col <= 9; col++) {
             System.out.printf("%3d", col);
         }
-        System.out.println();
-        System.out.print("--+");
+        System.out.println("--+");
         for (int i = 0; i < 8 * 3; i++) {
             System.out.print("-");
         }
@@ -97,13 +96,12 @@ public class CyclesTheme {
                 reversedNumber, palindromeStatus, parity, countTwos);
 
         System.out.println("\n7: ПРОВЕРКА СЧАСТЛИВОГО ЧИСЛА");
-        int initialNumber = 101002;
-        int firstHalf = initialNumber % 1000;
-        int secondHalf = initialNumber / 1000;
+        int firstHalf = originalNumber % 1000;
+        int secondHalf = originalNumber / 1000;
         int firstHalfSum = 0;
         int secondHalfSum = 0;
 
-        while (firstHalf > 0 || secondHalf > 0) {
+        while (secondHalf > 0) {
             firstHalfSum += firstHalf % 10;
             firstHalf /= 10;
             secondHalfSum += secondHalf % 10;
@@ -112,9 +110,9 @@ public class CyclesTheme {
 
         String luckyStatus = firstHalfSum == secondHalfSum ? "счастливое число" : "не счастливое число";
 
-        System.out.printf("%d - %s%n", initialNumber, luckyStatus);
-        System.out.printf("Сумма цифр %03d = %d%n", initialNumber % 1000, firstHalfSum);
-        System.out.printf("Сумма цифр %03d = %d%n", initialNumber / 1000, secondHalfSum);
+        System.out.printf("%d - %s%n", originalNumber, luckyStatus);
+        System.out.printf("Сумма цифр %03d = %d%n", originalNumber % 1000, firstHalfSum);
+        System.out.printf("Сумма цифр %03d = %d%n", originalNumber / 1000, secondHalfSum);
 
         System.out.println("\n8: ПРОСТОЙ ГЕНЕРАТОР ПАРОЛЯ");
         Random random = new Random();

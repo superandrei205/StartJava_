@@ -105,7 +105,7 @@ public class IfElseStatementTheme {
         } else {
             boolean isEqualOnes = (snFromDb % 10) == (snOnDevice % 10);
             boolean isEqualTens = (snFromDb / 10 % 10) == (snOnDevice / 10 % 10);
-            boolean isEqualHundreds = (snFromDb / 100 ) == (snOnDevice / 100);
+            boolean isEqualHundreds = (snFromDb / 100) == (snOnDevice / 100);
 
             if (!isEqualHundreds && !isEqualTens && !isEqualOnes) {
                 System.out.println("[№" + snOnDevice + "]: оборудование не идентифицировано");
