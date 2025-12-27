@@ -12,10 +12,7 @@ public class CyclesTheme {
 
         System.out.println("\n2. ВЫВОД ГЕОМЕТРИЧЕСКИХ ФИГУР");
         for (int row = 1; row < 6; row++) {
-            for (int i = 0; i < 10; i++) {
-                System.out.print("-");
-            }
-            System.out.print(" ");
+            System.out.print("---------- ");
             for (int i = row; i < 6; i++) {
                 System.out.print("*");
             }
@@ -31,11 +28,7 @@ public class CyclesTheme {
         for (int col = 2; col <= 9; col++) {
             System.out.printf("%3d", col);
         }
-        System.out.println("--+");
-        for (int i = 0; i < 8 * 3; i++) {
-            System.out.print("-");
-        }
-        System.out.println();
+        System.out.println("\n--+------------------------");
 
         for (int row = 2; row <= 9; row++) {
             System.out.printf("%d |", row);
@@ -96,6 +89,7 @@ public class CyclesTheme {
                 reversedNumber, palindromeStatus, parity, countTwos);
 
         System.out.println("\n7: ПРОВЕРКА СЧАСТЛИВОГО ЧИСЛА");
+        originalNumber = 101002;
         int firstHalf = originalNumber % 1000;
         int secondHalf = originalNumber / 1000;
         int firstHalfSum = 0;
