@@ -24,14 +24,9 @@ public class Calculator {
             }
             result = operand1 / operand2;
         } else if (operator == '^') {
-            if (operand2 == 0) {
-                result = 1;
-            } else {
-                int power = 1;
-                for (int i = 0; i < operand2; i++) {
-                    power *= operand1;
-                }
-                result = power;
+            result = 1;
+            for (int i = 0; i < operand2; i++) {
+                result *= operand1;
             }
         } else if (operator == '%') {
             if (operand2 == 0) {
