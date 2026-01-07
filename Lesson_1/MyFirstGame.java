@@ -1,3 +1,5 @@
+package Lesson_1;
+
 public class MyFirstGame {
     public static void main(String[] args) {
         int secretNumber = 50;
