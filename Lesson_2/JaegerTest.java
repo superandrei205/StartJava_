@@ -15,7 +15,7 @@ public class JaegerTest {
         System.out.println("Статус: " + gipsy.getStatus());
         gipsy.launch();
 
-        Jaeger cherno = new Jaeger("Cherno Alpha", 1, 85.34, 2412.0, "destroyed");
+        Jaeger cherno = new Jaeger("Cherno Alpha", "destroyed", 1, 85.34, 2412.0);
 
         System.out.println("\n=== Jaeger 2 (через конструктор) ===");
         System.out.println("Имя: " + cherno.getName());

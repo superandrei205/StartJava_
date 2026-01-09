@@ -16,25 +16,18 @@ public class Calculator {
     }
 
     public double calculate() {
+        if (secondNumber == 0 && (operation == '/' || operation == '%')) {
+            System.out.println("Ошибка: деление на ноль запрещено");
+            return Double.NaN;
+        }
+
         return switch (operation) {
             case '+' -> firstNumber + secondNumber;
             case '-' -> firstNumber - secondNumber;
             case '*' -> firstNumber * secondNumber;
-            case '/' -> {
-                if (secondNumber == 0) {
-                    System.out.println("Ошибка: деление на ноль запрещено");
-                    yield Double.NaN;
-                }
-                yield (double) firstNumber / secondNumber;
-            }
+            case '/' -> (double) firstNumber / secondNumber;
             case '^' -> Math.pow(firstNumber, secondNumber);
-            case '%' -> {
-                if (secondNumber == 0) {
-                    System.out.println("Ошибка: деление на ноль запрещено");
-                    yield Double.NaN;
-                }
-                yield firstNumber % secondNumber;
-            }
+            case '%' -> firstNumber % secondNumber;
             default -> {
                 System.out.println("Ошибка: операция '" + operation + "' не поддерживается");
                 yield Double.NaN;

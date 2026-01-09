@@ -5,42 +5,39 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
-        while (true) {
+        do {
             System.out.print("Введите первое число: ");
-            int firstNumber = scanner.nextInt();
+            calculator.setFirstNumber(scanner.nextInt());
             scanner.nextLine();
 
             System.out.print("Введите знак операции (+, -, *, /, ^, %): ");
-            char operator = scanner.nextLine().charAt(0);
+            calculator.setOperation(scanner.nextLine().charAt(0));
 
             System.out.print("Введите второе число: ");
-            int secondNumber = scanner.nextInt();
+            calculator.setSecondNumber(scanner.nextInt());
             scanner.nextLine();
 
-            calculator.setFirstNumber(firstNumber);
-            calculator.setOperation(operator);
-            calculator.setSecondNumber(secondNumber);
+            double answer = calculator.calculate();
+            printAnswer(answer);
 
-            double result = calculator.calculate();
+            String response;
+            do {
+                System.out.print("Хотите продолжить вычисления? [yes/no]: ");
+                response = scanner.nextLine().trim().toLowerCase();
+            } while (!response.equals("yes") && !response.equals("no"));
 
-            if (!Double.isNaN(result)) {
-                System.out.println("Результат: " + result);
-            }
-
-            System.out.print("Хотите продолжить вычисления? [yes/no]: ");
-            String answer = scanner.nextLine().trim().toLowerCase();
-
-            while (!answer.equals("yes") && !answer.equals("no")) {
-                System.out.print("Пожалуйста, введите 'yes' или 'no': ");
-                answer = scanner.nextLine().trim().toLowerCase();
-            }
-
-            if (answer.equals("no")) {
+            if (response.equals("no")) {
                 System.out.println("До свидания!");
                 break;
             }
-        }
+        } while (true);
 
         scanner.close();
+    }
+
+    private static void printAnswer(double result) {
+        if (!Double.isNaN(result)) {
+            System.out.println("Ответ: " + result);
+        }
     }
 }

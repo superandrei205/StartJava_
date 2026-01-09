@@ -1,19 +1,19 @@
 public class Jaeger {
-    public Jaeger() {}
-
-    public Jaeger(String name, int mark, double height, double weight, String status) {
-        this.name = name;
-        this.mark = mark;
-        this.height = height;
-        this.weight = weight;
-        this.status = status;
-    }
-
     private String name;
+    private String status;
     private int mark;
     private double height;
     private double weight;
-    private String status;
+
+    public Jaeger() {}
+
+    public Jaeger(String name, String status, int mark, double height, double weight) {
+        this.name = name;
+        this.status = status;
+        this.mark = mark;
+        this.height = height;
+        this.weight = weight;
+    }
 
     public String getName() {
         return name;
