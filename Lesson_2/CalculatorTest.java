@@ -5,6 +5,7 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
         Calculator calculator = new Calculator();
 
+        String response;
         do {
             System.out.print("Введите первое число: ");
             calculator.setFirstNumber(scanner.nextInt());
@@ -20,18 +21,13 @@ public class CalculatorTest {
             double answer = calculator.calculate();
             printAnswer(answer);
 
-            String response;
             do {
                 System.out.print("Хотите продолжить вычисления? [yes/no]: ");
                 response = scanner.nextLine().trim().toLowerCase();
             } while (!response.equals("yes") && !response.equals("no"));
+        } while (response.equals("yes"));
 
-            if (response.equals("no")) {
-                System.out.println("До свидания!");
-                break;
-            }
-        } while (true);
-
+        System.out.println("До свидания!");
         scanner.close();
     }
 
