@@ -17,13 +17,10 @@ public class GuessNumberTest {
             GuessNumber game = new GuessNumber(player1, player2);
             game.play(scanner);
 
-            System.out.print("Хотите продолжить игру? [yes/no]: ");
-            answer = scanner.nextLine().trim().toLowerCase();
-
-            while (!answer.equals("yes") && !answer.equals("no")) {
-                System.out.print("Пожалуйста, введите 'yes' или 'no': ");
+            do {
+                System.out.print("Хотите продолжить игру? [yes/no]: ");
                 answer = scanner.nextLine().trim().toLowerCase();
-            }
+            } while (!answer.equals("yes") && !answer.equals("no"));
         } while (answer.equals("yes"));
 
         System.out.println("Спасибо за игру!");
