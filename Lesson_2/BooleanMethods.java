@@ -1,59 +1,55 @@
 public class BooleanMethods {
-    public boolean isProgramContinuing() {
-        System.out.print(getCurrentMethodName() +
+    public boolean isContinueProgram() {
+        System.out.println(Methods.getCurrentMethodName() +
                 "() -> программа выполняется далее или завершается? ");
-        return false;
+        return true;
     }
 
     public boolean hasUniqueDigit() {
-        System.out.print(getCurrentMethodName() +
+        System.out.println(Methods.getCurrentMethodName() +
                 "() -> последовательность содержит уникальную цифру? ");
-        return true;
+        return false;
     }
 
-    public boolean isInputLetter() {
-        System.out.print(getCurrentMethodName() +
+    public boolean isLetterInput() {
+        System.out.println(Methods.getCurrentMethodName() +
                 "() -> пользователь ввел букву или что-то другое? ");
-        return false;
+        return true;
     }
 
     public boolean hasEqualDigits() {
-        System.out.print(getCurrentMethodName() +
+        System.out.println(Methods.getCurrentMethodName() +
                 "() -> в проверяемых числах, есть равные цифры? ");
-        return true;
+        return false;
     }
 
-    public boolean hasMarioLives() {
-        System.out.print(getCurrentMethodName() +
+    public boolean hasMarioAttemptsLeft() {
+        System.out.println(Methods.getCurrentMethodName() +
                 "() -> в игре \"Марио\" остались попытки? ");
-        return false;
+        return true;
     }
 
     public boolean isEmptyOrSpaces() {
-        System.out.print(getCurrentMethodName() +
+        System.out.println(Methods.getCurrentMethodName() +
                 "() -> пользователь ввёл пустую строку или из одних пробелов? ");
-        return true;
+        return false;
     }
 
-    public boolean isDiceEven() {
-        System.out.print(getCurrentMethodName() +
+    public boolean isValidFilePath() {
+        System.out.println(Methods.getCurrentMethodName() +
                 "() -> на кубике, который бросил компьютер, выпало четное число? ");
-        return false;
-    }
-
-    public boolean isFilePathValid() {
-        System.out.print(getCurrentMethodName() +
-                "() -> путь до файла, который вы ищите на ssd, действительный? ");
         return true;
     }
 
-    public boolean isFileExists() {
-        System.out.print(getCurrentMethodName() +
-                "() -> файл по указанному адресу существует? ");
+    public boolean isValidSsdFilePath() {
+        System.out.println(Methods.getCurrentMethodName() +
+                "() -> путь до файла, который вы ищите на ssd, действительный? ");
         return false;
     }
 
-    private static String getCurrentMethodName() {
-        return Thread.currentThread().getStackTrace()[2].getMethodName();
+    public boolean isExistsFile() {
+        System.out.println(Methods.getCurrentMethodName() +
+                "() -> файл по указанному адресу существует? ");
+        return true;
     }
 }
