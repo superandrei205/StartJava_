@@ -1,4 +1,4 @@
-package Lesson_1;
+package com.startjava.lesson_1.final_;
 
 import java.util.Random;
 
