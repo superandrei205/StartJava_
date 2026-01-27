@@ -1,10 +1,14 @@
-package com.startjava.lesson_2_3.rps;
+package com.startjava.lesson_2_3_4.rps;
 
 import java.util.Random;
 import java.util.Scanner;
 
 // Игра Камень-Ножницы-Бумага
 public class RpsGameFormatting {
+    private static final String ROCK = "✊";
+    private static final String SCISSORS = "✌️";
+    private static final String PAPER = "✋";
+
     public static void main(String[] args) throws InterruptedException {
         Random r = new Random();
         Scanner console = new Scanner(System.in);
@@ -23,10 +27,6 @@ public class RpsGameFormatting {
         determineWinner(name1, sign1, name2, sign2);
         console.close();
     }
-
-    private static final String ROCK = "✊";
-    private static final String SCISSORS = "✌️";
-    private static final String PAPER = "✋";
 
     private static String inputName(Scanner console) {
         System.out.print("Введите имя игрока: ");
