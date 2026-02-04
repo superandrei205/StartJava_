@@ -2,65 +2,87 @@ package com.startjava.lesson_2_3_4.array;
 
 public class FactorialCalculator {
     public static void main(String[] args) {
-        processAndPrint();
-        processAndPrint((int[]) null);
-        processAndPrint(-5);
-        processAndPrint(7, 0, 21);
-        processAndPrint(1, 20, 5, -3);
+        int[] testData = {};
+        String[] expressions = computeExpressions(testData);
+        printReport(expressions);
+
+        testData = null;
+        expressions = computeExpressions(testData);
+        printReport(expressions);
+
+        testData = new int[]{-5};
+        expressions = computeExpressions(testData);
+        printReport(expressions);
+
+        testData = new int[]{7, 0, 21};
+        expressions = computeExpressions(testData);
+        printReport(expressions);
+
+        testData = new int[]{1, 20, 5, -3};
+        expressions = computeExpressions(testData);
+        printReport(expressions);
     }
 
-    public static void processAndPrint(int... numbers) {
+    public static String[] computeExpressions(int... numbers) {
         if (numbers == null) {
-            System.out.println("Ошибка: входной массив = null");
-            return;
+            return new String[]{"""
+                                Ошибка: входной массив = null
+                                """};
         }
 
-        if (numbers.length == 0) {
-            System.out.println("Нет данных для вычисления: массив пуст (длина = 0)");
-            return;
+        int length = numbers.length;
+        if (length == 0) {
+            return new String[]{"""
+                                Нет данных для вычисления: массив пуст (длина = 0)
+                                """};
         }
 
-        String[] results = calculateFactorialExpressions(numbers);
-        for (String result : results) {
-            System.out.println(result);
-        }
-        System.out.println();
-    }
-
-    public static String[] calculateFactorialExpressions(int... numbers) {
-        String[] expressions = new String[numbers.length];
-        for (int i = 0; i < numbers.length; i++) {
-            expressions[i] = formatFactorialExpression(numbers[i]);
+        String[] expressions = new String[length];
+        for (int i = 0; i < length; i++) {
+            expressions[i] = formatExpression(numbers[i]);
         }
         return expressions;
     }
 
-    public static String formatFactorialExpression(int n) {
-        StringBuilder builder = new StringBuilder();
-        builder.append(n).append("!");
-
+    public static String formatExpression(int n) {
         if (n < 0) {
-            builder.setLength(0);
-            builder.append("Ошибка: факториал ").append(n).append("! не определен");
-            return builder.toString();
+            return "Ошибка: факториал " + n + "! не определен";
         }
 
         if (n > 20) {
-            builder.setLength(0);
-            builder.append("Ошибка: факториал ").append(n).append("! слишком велик (максимум 20!)");
-            return builder.toString();
+            return "Ошибка: факториал " + n + "! слишком велик (максимум 20!)";
         }
 
-        long fact = factorial(n);
-        builder.append(" = ").append(fact);
+        long factorialValue = calculateFactorial(n);
+        StringBuilder builder = new StringBuilder();
+        builder.append(n).append("! = ");
+
+        boolean isTrivial = n <= 1 ? true : false;
+        if (isTrivial) {
+            builder.append(factorialValue);
+        } else {
+            for (int i = 1; i <= n; i++) {
+                builder.append(i);
+                builder.append(i < n ? " * " : " = ");
+            }
+            builder.append(factorialValue);
+        }
+
         return builder.toString();
     }
 
-    public static long factorial(int n) {
-        long result = 1;
+    public static long calculateFactorial(int n) {
+        long value = 1;
         for (int i = 2; i <= n; i++) {
-            result *= i;
+            value *= i;
         }
-        return result;
+        return value;
+    }
+
+    public static void printReport(String... expressions) {
+        for (String expression : expressions) {
+            System.out.println(expression);
+        }
+        System.out.println();
     }
 }
